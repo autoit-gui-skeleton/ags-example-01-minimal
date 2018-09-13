@@ -1,0 +1,29 @@
+{
+  "name": "ags-example-01-minimal",
+  "version": "1.0.0",
+  "description": "Minimal an empty project which you can use to create your new project with AGS framework. More information about it here : https://autoit-gui-skeleton.github.io/.",
+  "homepage": "https://autoit-gui-skeleton.github.io/",
+  "author": "vb20100bv@gmail.com",
+  "license": "MIT License",
+  "year": "2018",
+  "private": true,
+  "repository": {
+    "url": "not-yet-git",
+    "type": "git"
+  },
+  "dependencies": {},
+  "AGS": {
+    "framework": {
+      "version": "1.0.0"
+    },
+    "AutoIt": {
+      "version": "3.3.14.5"
+    },
+    "application": {
+      "main": "main.au3",
+      "corporate": "A.C.M.E.",
+      "contact": "support@acme.com",
+      "GUID": "8f2e6781-8f2f-bdb2-e694-c13488d49b0a"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+#-------------------------------------------------------------------------------
+#
+# Copyright © 2018,
+#
+# @AGS framework  : v1.0.0
+# @AutoIt version : v3.3.14.5
+#
+# This file is a "template" of what your 'parameters.ini' file should look like
+# Set parameters here that may be different on each application. Only this file
+# is save with control version and push on remote server.
+#
+# You add parameter of application into the section [APPLICATION]. Don't forget
+# to specify if the parameter is OPTIONAL or REQUIRED in comment. You can also
+# found section [AGS-COMPONENT_NAME] to configure each AGS components. For
+# example with the AGS compponent HttpRequest, you have the section
+# [AGS_HTTP_REQUEST] to configure its parameters.
+#
+#
+# How this file is referenced in AGS project ?
+# -------------------------------------------------------
+# To use it, we have a global constante variable $APP_PARAMETERS_INI, wich
+# contains the full path to it. It's defined in `./src/GLOBALS.au3`, and when
+# the application start-up, it checks that parameters.ini exist.
+#
+#
+# How to read the value of a parameter ?
+# --------------------------------------
+# For a string value, we use:
+# ```
+# Local $LAST_OPEN_FILE = IniRead( _
+#   $APP_PARAMETERS_INI, "APPLICATION", "LAST_OPEN_FILE", "NotFound")
+# ```
+#
+# And for a integer value, we use:
+# ```
+# Local $IS_OPEN = Int(IniRead( _
+#   $APP_PARAMETERS_INI, "APPLICATION", "IS_OPEN", -1)
+# ```
+#
+#
+# How to change the value of a parameter ?
+# ----------------------------------------
+# For example, if the value is provided from an input controller in GUI, we use
+# in first the GUICtrlRead method to get its value. And finally we save its
+# value into a parameter, with this instrcution :
+# ```
+# IniWrite( _
+#   $APP_PARAMETERS_INI, "APPLICATION", "LAST_OPEN_FILE", _
+#   GUICtrlRead($input_OPEN_FILE) _
+# )
+# ```
+#
+#-------------------------------------------------------------------------------
+
+[APPLICATION]
+; [REQUIRED]
+; Add required parameters of application here
+
+; [OPTIONAL]
+; Add optional parameters of application here

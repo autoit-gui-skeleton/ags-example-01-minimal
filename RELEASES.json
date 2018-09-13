@@ -1,0 +1,15 @@
+{
+  "name": "ags-example-01-minimal",
+  "description": "Minimal an empty AGS project which you can use to create your new AGS project",
+  "license": "MIT License",
+  "homepage": "https://autoit-gui-skeleton.github.io/",
+  "releases": [
+    {
+      "version": "0.1.0",
+      "state": "prototype",
+      "downloadSetup": "undefined",
+      "published": "undefined",
+      "releaseNotes": "undefined"
+    }
+  ]
+}
