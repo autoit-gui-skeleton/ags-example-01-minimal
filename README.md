@@ -1,7 +1,5 @@
 ags-example-01-minimal
-=======================
-
-> Example of an application built with [AGS framework](https://autoit-gui-skeleton.github.io/).
+======================
 
 
 <br/>
@@ -21,9 +19,12 @@ This project is an example of an application built with [AGS framework](https://
 <br/>
 
 
-## Control the graphic user interface (GUI)
+## How the graphic user interface (GUI) is handled with AGS ?
 
 This application have different graphics elements, that handled into this views : 'welcome', 'about' and 'footer' view.
+
+![ags-example-01-minimal views](./docs/images/ags-example-01-minimal_views.gif)
+
 
 ### The main GUI manager
 
@@ -172,10 +173,47 @@ EndFunc
 
 For example to switch from the `Welcome` view to the view `About`, we start by hiding all the graphic elements of the `Welcome` view. The graphic elements of the footer are always visible. And then we display the graphic elements of the `About` view.
 
-![ags-console about view](./docs/images/ags-example-01-minimal_views.gif)
+
+<br/>
+
+
+## How to build the Windows installer (setup) of an AutoIt application with AGS ?
+
+When you just wrapped up an application, and we have executable code, you need to find a way to properly package, easy deploy to insall your application on end user machines. The first natural approch is to create a simple archive zip file of your project. But it’s not sufficient, if you want to benefit from all the features of a Windows installer.
+
+So in order to facilitate the deployment of a Windows desktop application, AGS is proposed to build a Windows installer with the solution InnoSetup. 
+
+### Command line application for AGS framework
+
+AGS provided it into the [ags-console](https://github.com/autoit-gui-skeleton/ags-console) project. It's a command line application for AGS framework that provides commands. It was created in the Node.js ecosystem in order to help developpers who want built an AutoIt application with AGS. 
+
+![ags-console](./docs/images/ags-console_001-entry.png)
+
+
+### The `create-setup` command of ags-console
+
+To create the Windows installer you can launch this command `ags create-setup` without argument in the root folder of an AGS project, or you can give the root folder in first argument.
+
+```
+λ ags create-setup d:\AGS\ags-examples\ags-example-01-minimal\ 
+```
+
+At the end of process, the Windows installer is generated in `./releases/` folder of root folder. Be carefull, the root folder must have an `package.json` that respect AGS application conventions. This json file must have an AGS.application property.
+
+![ags-console create setup execution](./docs/images/ags-console_002-create-setup.png)
+
+You can add :
+
+- `--verbose` option to show debug messages in console output
+- `--new-guid` option to force to generate a new GUID windows, and save it into the AGS `pacakge.json`.  This GUID is used to identify the application in the Windows registry. So the setup can check if the application is already install with this id.
+- `--output <folder>` option to specify the output folder whre the setup is generated. By default it will be created into the root folder and in the ./releases/vx.y.z/ subfolder. 
+
+
+![ags-console create setup result](./docs/images/ags-console_003-result-setup.png)
 
 
 <br/>
+
 
 ## About
 
